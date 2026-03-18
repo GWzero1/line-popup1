@@ -3,202 +3,349 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ช่องทางติดต่อ</title>
+  <title>ช่องทางติดต่อ | สำนักงานขนส่งจังหวัดสมุทรปราการ</title>
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: "Sarabun", "TH Sarabun New", Arial, sans-serif;
-      background: rgba(7, 25, 61, 0.88);
+      background:
+        linear-gradient(180deg, rgba(7, 25, 61, 0.96) 0%, rgba(13, 45, 99, 0.92) 100%);
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
+      padding: 20px 14px 28px;
+      color: #24344d;
+    }
+
+    .page-wrap {
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
     }
 
     .popup-card {
-      width: 100%;
-      max-width: 420px;
       background: #ffffff;
-      border-radius: 22px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
       animation: fadeUp 0.35s ease;
     }
 
     .popup-header {
-      background: linear-gradient(135deg, #0b1f4d, #163a7a);
-      color: #fff;
+      position: relative;
+      background: linear-gradient(135deg, #0b1f4d 0%, #163a7a 55%, #1e4d97 100%);
+      color: #ffffff;
       text-align: center;
-      padding: 22px;
+      padding: 28px 20px 22px;
+    }
+
+    .logo-wrap {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 14px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .logo-wrap img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      display: block;
     }
 
     .popup-header h1 {
       margin: 0;
       font-size: 24px;
       font-weight: 700;
+      letter-spacing: 0.2px;
+      line-height: 1.35;
     }
 
     .popup-header p {
-      margin-top: 8px;
+      margin: 8px 0 0;
       font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.96;
     }
 
     .popup-body {
+      background: #f4f7fb;
       padding: 16px;
-      background: #f7f9fc;
     }
 
-    .contact-box {
-      background: #fff;
-      border: 1px solid #d9e2f0;
-      border-radius: 16px;
+    .section-card {
+      background: #ffffff;
+      border: 1px solid #dbe5f1;
+      border-radius: 18px;
       padding: 14px;
       margin-bottom: 12px;
+      box-shadow: 0 6px 16px rgba(18, 45, 92, 0.06);
     }
 
-    .contact-title {
-      margin: 0 0 10px;
-      color: #0b1f4d;
+    .section-title {
+      margin: 0 0 12px;
       font-size: 17px;
       font-weight: 700;
+      color: #0b1f4d;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .contact-detail {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .contact-detail a {
-      color: #163a7a;
-      text-decoration: none;
-      font-weight: 600;
+    .section-title::before {
+      content: "";
+      width: 6px;
+      height: 20px;
+      border-radius: 999px;
+      background: #1b4f9c;
+      display: inline-block;
     }
 
     .phone-item {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+      border-bottom: 1px solid #e8eef7;
     }
 
     .phone-item:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
 
     .phone-dept {
       display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
       font-weight: 600;
+      color: #324763;
+      line-height: 1.5;
+    }
+
+    .phone-link,
+    .info-link {
+      color: #123c83;
+      font-weight: 700;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .phone-link:hover,
+    .info-link:hover {
+      text-decoration: underline;
+    }
+
+    .info-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #324763;
+    }
+
+    .highlight-box {
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4fc 100%);
+      border: 1px solid #d7e3f4;
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .complaint-box {
+      background: #fff8f1;
+      border: 1px solid #f2d3a8;
+    }
+
+    .complaint-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: #9a5a00;
+      text-decoration: none;
+    }
+
+    .complaint-sub {
+      margin-top: 4px;
+      font-size: 14px;
+      color: #7b5b2b;
+      line-height: 1.5;
     }
 
     .popup-footer {
-      padding: 16px;
+      background: #f4f7fb;
+      padding: 0 16px 18px;
     }
 
     .close-btn {
+      display: block;
       width: 100%;
       border: none;
-      border-radius: 12px;
-      background: #0b1f4d;
-      color: #fff;
-      padding: 12px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0b1f4d 0%, #163a7a 100%);
+      color: #ffffff;
       font-size: 16px;
+      font-weight: 700;
+      padding: 14px 16px;
       cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .close-btn:hover {
+      opacity: 0.96;
+      transform: translateY(-1px);
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 12px;
+      color: #6e7f97;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 14px 10px 20px;
+      }
+
+      .popup-header {
+        padding: 24px 16px 20px;
+      }
+
+      .logo-wrap {
+        width: 84px;
+        height: 84px;
+      }
+
+      .logo-wrap img {
+        width: 66px;
+        height: 66px;
+      }
+
+      .popup-header h1 {
+        font-size: 22px;
+      }
+
+      .popup-header p,
+      .info-text,
+      .phone-dept {
+        font-size: 14px;
+      }
+
+      .section-title {
+        font-size: 16px;
+      }
+
+      .complaint-number {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="page-wrap">
+    <div class="popup-card">
+      <div class="popup-header">
+        <div class="logo-wrap">
+          <img src="logo-spk.png" alt="ตราสำนักงานขนส่งจังหวัดสมุทรปราการ">
+        </div>
+        <h1>ช่องทางติดต่อ</h1>
+        <p>สำนักงานขนส่งจังหวัดสมุทรปราการ<br>สอบถามข้อมูลและติดต่อหน่วยงานได้ตามช่องทางด้านล่าง</p>
+      </div>
 
-<div class="popup-card">
+      <div class="popup-body">
+        <div class="section-card">
+          <h2 class="section-title">หมายเลขโทรศัพท์</h2>
 
-  <div class="popup-header">
-    <h1>ช่องทางติดต่อ</h1>
-    <p>สำนักงานขนส่งจังหวัดสมุทรปราการ</p>
+          <div class="phone-item">
+            <span class="phone-dept">งานบริหารงานทั่วไป</span>
+            <a class="phone-link" href="tel:023234060">02-323-4060</a>
+          </div>
+
+          <div class="phone-item">
+            <span class="phone-dept">กลุ่มวิชาการขนส่ง</span>
+            <a class="phone-link" href="tel:023232872">0-2323-2872</a>
+          </div>
+
+          <div class="phone-item">
+            <span class="phone-dept">ฝ่ายทะเบียนรถ</span>
+            <a class="phone-link" href="tel:023232870">0-2323-2870</a>
+          </div>
+
+          <div class="phone-item">
+            <span class="phone-dept">ฝ่ายตรวจสภาพรถ</span>
+            <a class="phone-link" href="tel:023232873">0-2323-2873</a>
+          </div>
+
+          <div class="phone-item">
+            <span class="phone-dept">ฝ่ายใบอนุญาตขับขี่</span>
+            <a class="phone-link" href="tel:023232703">0-2323-2703</a>
+          </div>
+        </div>
+
+        <div class="section-card complaint-box">
+          <h2 class="section-title">รับเรื่องร้องเรียน</h2>
+          <div class="highlight-box complaint-box">
+            <a class="complaint-number" href="tel:1584">1584</a>
+            <div class="complaint-sub">สายด่วนสำหรับรับเรื่องร้องเรียน</div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h2 class="section-title">เว็บไซต์</h2>
+          <p class="info-text">
+            <a class="info-link" href="https://spk.dlt.go.th" target="_blank" rel="noopener noreferrer">spk.dlt.go.th</a>
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2 class="section-title">Facebook</h2>
+          <p class="info-text">
+            <a class="info-link" href="https://www.facebook.com/profile.php?id=61566429342313" target="_blank" rel="noopener noreferrer">
+              สำนักงานขนส่งจังหวัดสมุทรปราการ
+            </a>
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2 class="section-title">อีเมล</h2>
+          <p class="info-text">
+            <a class="info-link" href="mailto:saraban-spk@dlt.mail.go.th">saraban-spk@dlt.mail.go.th</a>
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2 class="section-title">ที่ตั้ง</h2>
+          <div class="highlight-box">
+            <p class="info-text" style="margin-bottom: 8px;">
+              สำนักงานขนส่งจังหวัดสมุทรปราการ
+            </p>
+            <a class="info-link" href="https://maps.app.goo.gl/DPnNhMh9eqCEYR1f7" target="_blank" rel="noopener noreferrer">
+              เปิดแผนที่ Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup-footer">
+        <button class="close-btn" onclick="window.history.back()">ปิดหน้าต่าง</button>
+        <div class="footer-note">ข้อมูลสำหรับติดต่อราชการ โปรดตรวจสอบวันและเวลาทำการก่อนเข้ารับบริการ</div>
+      </div>
+    </div>
   </div>
-
-  <div class="popup-body">
-
-    <!-- โทรศัพท์ -->
-    <div class="contact-box">
-      <h2 class="contact-title">โทรศัพท์</h2>
-
-      <div class="phone-item">
-        <span class="phone-dept">งานบริหารงานทั่วไป</span>
-        <a href="tel:023234060">02-323-4060</a>
-      </div>
-
-      <div class="phone-item">
-        <span class="phone-dept">กลุ่มวิชาการขนส่ง</span>
-        <a href="tel:023232872">0-2323-2872</a>
-      </div>
-
-      <div class="phone-item">
-        <span class="phone-dept">ฝ่ายทะเบียนรถ</span>
-        <a href="tel:023232870">0-2323-2870</a>
-      </div>
-
-      <div class="phone-item">
-        <span class="phone-dept">ฝ่ายตรวจสภาพรถ</span>
-        <a href="tel:023232873">0-2323-2873</a>
-      </div>
-
-      <div class="phone-item">
-        <span class="phone-dept">ฝ่ายใบอนุญาตขับขี่</span>
-        <a href="tel:023232703">0-2323-2703</a>
-      </div>
-
-      <div class="phone-item">
-        <span class="phone-dept">ร้องเรียน</span>
-        <a href="tel:1584">1584</a>
-      </div>
-    </div>
-
-    <!-- Website -->
-    <div class="contact-box">
-      <h2 class="contact-title">เว็บไซต์</h2>
-      <p class="contact-detail">
-        <a href="https://spk.dlt.go.th" target="_blank">spk.dlt.go.th</a>
-      </p>
-    </div>
-
-    <!-- Facebook -->
-    <div class="contact-box">
-      <h2 class="contact-title">Facebook</h2>
-      <p class="contact-detail">
-        <a href="https://www.facebook.com/profile.php?id=61566429342313" target="_blank">
-          สำนักงานขนส่งจังหวัดสมุทรปราการ
-        </a>
-      </p>
-    </div>
-
-    <!-- Email -->
-    <div class="contact-box">
-      <h2 class="contact-title">อีเมล</h2>
-      <p class="contact-detail">
-        <a href="mailto:saraban-spk@dlt.mail.go.th">
-          saraban-spk@dlt.mail.go.th
-        </a>
-      </p>
-    </div>
-
-    <!-- ที่ตั้ง -->
-    <div class="contact-box">
-      <h2 class="contact-title">ที่ตั้ง</h2>
-      <p class="contact-detail">
-        <a href="https://maps.app.goo.gl/DPnNhMh9eqCEYR1f7" target="_blank">
-          เปิดแผนที่ Google Maps
-        </a>
-      </p>
-    </div>
-
-  </div>
-
-  <div class="popup-footer">
-    <button class="close-btn" onclick="window.history.back()">ปิดหน้าต่าง</button>
-  </div>
-
-</div>
-
 </body>
 </html>
