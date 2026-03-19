@@ -12,8 +12,7 @@
     body {
       margin: 0;
       font-family: "Sarabun", "TH Sarabun New", Arial, sans-serif;
-      background:
-        linear-gradient(180deg, rgba(7, 25, 61, 0.96) 0%, rgba(13, 45, 99, 0.92) 100%);
+      background: linear-gradient(180deg, rgba(7, 25, 61, 0.96) 0%, rgba(13, 45, 99, 0.92) 100%);
       min-height: 100vh;
       padding: 20px 14px 28px;
       color: #24344d;
@@ -25,7 +24,7 @@
       margin: 0 auto;
     }
 
-    .popup-card {
+    .card {
       background: #ffffff;
       border-radius: 24px;
       overflow: hidden;
@@ -33,12 +32,11 @@
       animation: fadeUp 0.35s ease;
     }
 
-    .popup-header {
-      position: relative;
-      background: linear-gradient(135deg, #0b1f4d 0%, #163a7a 55%, #1e4d97 100%);
-      color: #ffffff;
+    .header {
       text-align: center;
+      color: #ffffff;
       padding: 28px 20px 22px;
+      background: linear-gradient(135deg, #0b1f4d 0%, #163a7a 55%, #1e4d97 100%);
     }
 
     .logo-wrap {
@@ -61,7 +59,7 @@
       display: block;
     }
 
-    .popup-header h1 {
+    .header h1 {
       margin: 0;
       font-size: 24px;
       font-weight: 700;
@@ -69,14 +67,14 @@
       line-height: 1.35;
     }
 
-    .popup-header p {
+    .header p {
       margin: 8px 0 0;
       font-size: 15px;
       line-height: 1.6;
       opacity: 0.96;
     }
 
-    .popup-body {
+    .body {
       background: #f4f7fb;
       padding: 16px;
     }
@@ -155,7 +153,12 @@
       padding: 12px;
     }
 
-    .complaint-box {
+    .complaint-section {
+      background: #fff8f1;
+      border: 1px solid #f2d3a8;
+    }
+
+    .complaint-highlight {
       background: #fff8f1;
       border: 1px solid #f2d3a8;
     }
@@ -174,12 +177,12 @@
       line-height: 1.5;
     }
 
-    .popup-footer {
+    .footer {
       background: #f4f7fb;
       padding: 0 16px 18px;
     }
 
-    .close-btn {
+    .btn {
       display: block;
       width: 100%;
       border: none;
@@ -193,7 +196,7 @@
       transition: transform 0.15s ease, opacity 0.15s ease;
     }
 
-    .close-btn:hover {
+    .btn:hover {
       opacity: 0.96;
       transform: translateY(-1px);
     }
@@ -222,7 +225,7 @@
         padding: 14px 10px 20px;
       }
 
-      .popup-header {
+      .header {
         padding: 24px 16px 20px;
       }
 
@@ -236,11 +239,11 @@
         height: 66px;
       }
 
-      .popup-header h1 {
+      .header h1 {
         font-size: 22px;
       }
 
-      .popup-header p,
+      .header p,
       .info-text,
       .phone-dept {
         font-size: 14px;
@@ -258,8 +261,8 @@
 </head>
 <body>
   <div class="page-wrap">
-    <div class="popup-card">
-      <div class="popup-header">
+    <div class="card">
+      <div class="header">
         <div class="logo-wrap">
           <img src="logo-spk.png" alt="ตราสำนักงานขนส่งจังหวัดสมุทรปราการ">
         </div>
@@ -267,7 +270,7 @@
         <p>สำนักงานขนส่งจังหวัดสมุทรปราการ<br>สอบถามข้อมูลและติดต่อหน่วยงานได้ตามช่องทางด้านล่าง</p>
       </div>
 
-      <div class="popup-body">
+      <div class="body">
         <div class="section-card">
           <h2 class="section-title">หมายเลขโทรศัพท์</h2>
 
@@ -297,9 +300,9 @@
           </div>
         </div>
 
-        <div class="section-card complaint-box">
+        <div class="section-card complaint-section">
           <h2 class="section-title">รับเรื่องร้องเรียน</h2>
-          <div class="highlight-box complaint-box">
+          <div class="highlight-box complaint-highlight">
             <a class="complaint-number" href="tel:1584">1584</a>
             <div class="complaint-sub">สายด่วนสำหรับรับเรื่องร้องเรียน</div>
           </div>
@@ -315,9 +318,7 @@
         <div class="section-card">
           <h2 class="section-title">Facebook</h2>
           <p class="info-text">
-            <a class="info-link" href="https://www.facebook.com/profile.php?id=61566429342313" target="_blank" rel="noopener noreferrer">
-              สำนักงานขนส่งจังหวัดสมุทรปราการ
-            </a>
+            <a class="info-link" href="https://www.facebook.com/profile.php?id=61566429342313" target="_blank" rel="noopener noreferrer">สำนักงานขนส่งจังหวัดสมุทรปราการ</a>
           </p>
         </div>
 
@@ -334,15 +335,13 @@
             <p class="info-text" style="margin-bottom: 8px;">
               สำนักงานขนส่งจังหวัดสมุทรปราการ
             </p>
-            <a class="info-link" href="https://maps.app.goo.gl/DPnNhMh9eqCEYR1f7" target="_blank" rel="noopener noreferrer">
-              เปิดแผนที่ Google Maps
-            </a>
+            <a class="info-link" href="https://maps.app.goo.gl/DPnNhMh9eqCEYR1f7" target="_blank" rel="noopener noreferrer">เปิดแผนที่ Google Maps</a>
           </div>
         </div>
       </div>
 
-      <div class="popup-footer">
-        <button class="close-btn" onclick="window.history.back()">ปิดหน้าต่าง</button>
+      <div class="footer">
+        <button class="btn" onclick="window.history.back()">ปิดหน้าต่าง</button>
         <div class="footer-note">ข้อมูลสำหรับติดต่อราชการ โปรดตรวจสอบวันและเวลาทำการก่อนเข้ารับบริการ</div>
       </div>
     </div>
